@@ -115,16 +115,17 @@ int a[9][9];
 			display();
 		}
 		void check(){
-			for (int i = 0; i < 9; ++i) //check row
-		        for (int j = 0; j < 9; ++j)
-		        	for (int k = 0; k < 9; ++k)
-		        		for (int l = 0; l < 9; ++l)
-		        			if(a[i][j]==a[k][l]) //check this again!
-				        	{
-				        		cout<<"failed!"; 
-				        		exit(0);
-				        	}
-			cout<<"success!";
+			for(int k=0 ; k<9 ; k++)
+			for(int i=0; i<9; i++)
+			{
+				for(int l=0 ; l<9; l++)
+				for(int j=0 ; j<9; j++)
+					if(a[k][i]==a[l][j] && i!=j)
+					{
+						cout<<"failed!";
+						break;
+					}
+			}
 		}
 };
 
